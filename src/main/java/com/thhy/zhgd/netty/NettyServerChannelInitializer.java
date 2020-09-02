@@ -1,5 +1,6 @@
 package com.thhy.zhgd.netty;
 
+import com.thhy.zhgd.netty.decode.DecodeHexStrToByteBuf;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
@@ -50,14 +51,14 @@ public class NettyServerChannelInitializer extends ChannelInitializer<SocketChan
 	@Qualifier("WorkCycleInformationHandler")
 	private ChannelHandler workCycleInformationHandler;
 
-	@Autowired
-	@Qualifier("DecodeHexStrToByteBuf")
-	private ChannelHandler decodeHexStrToByteBuf;
+//	@Autowired
+//	@Qualifier("DecodeHexStrToByteBuf")
+//	private ChannelHandler decodeHexStrToByteBuf;
 
 	@Override
 	protected void initChannel(SocketChannel channel) throws Exception {
 		channel.pipeline()
-				.addLast(decodeHexStrToByteBuf)
+				.addLast(new DecodeHexStrToByteBuf())
 				.addLast(alarmInformationHandler)
 				.addLast(alarmSetUpHandler)
 				.addLast(basicAttributesHandler)

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadBasicAttributesInformation")
 public class LoadBasicAttributesInformation extends AbstractLoadObject<BasicAttributesInformation> {
 	@Override
-	public BasicAttributesInformation loadByHexString(String hexStr) {
+	public BasicAttributesInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

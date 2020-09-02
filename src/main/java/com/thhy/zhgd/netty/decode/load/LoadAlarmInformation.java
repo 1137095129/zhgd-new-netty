@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class LoadAlarmInformation extends AbstractLoadObject<AlarmInformation> {
 
 	@Override
-	public AlarmInformation loadByHexString(String hexStr) {
+	public AlarmInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

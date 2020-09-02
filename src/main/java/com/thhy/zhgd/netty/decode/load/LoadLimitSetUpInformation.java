@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadLimitSetUpInformation")
 public class LoadLimitSetUpInformation extends AbstractLoadObject<LimitSetUpInformation> {
 	@Override
-	public LimitSetUpInformation loadByHexString(String hexStr) {
+	public LimitSetUpInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

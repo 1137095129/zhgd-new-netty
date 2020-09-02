@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadSensorCalibrationInformation")
 public class LoadSensorCalibrationInformation extends AbstractLoadObject<SensorCalibrationInformation> {
 	@Override
-	public SensorCalibrationInformation loadByHexString(String hexStr) {
+	public SensorCalibrationInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

@@ -7,48 +7,48 @@ import com.thhy.zhgd.util.LoadObject;
 
 public abstract class AbstractLoadObject<T> implements LoadObject<T> {
 
-	public DataMessage loadDataMessage(DataMessageKind kind, String hexString) {
+	public DataMessage loadDataMessage(DataMessageKind kind, Integer[] arr) {
 		DataMessage message = new DataMessage();
 		message.setKind(kind);
 
 		//TODO 设备编号解析
 
-		setDataMessage(message, hexString);
+		setDataMessage(message, arr);
 		return message;
 	}
 
-	final void setDataMessage(DataMessage message, String hexString) {
+	final void setDataMessage(DataMessage message, Integer[] arr) {
 		DataMessageKind kind = message.getKind();
 		switch (kind) {
 			case WORK_CYCLE_INFORMATION:
-				message.setWorkCycleInformation((WorkCycleInformation) loadByHexString(hexString));
+				message.setWorkCycleInformation((WorkCycleInformation) loadByHexString(arr));
 				break;
 			case SENSOR_CALIBRATION:
-				message.setSensorCalibrationInformation((SensorCalibrationInformation) loadByHexString(hexString));
+				message.setSensorCalibrationInformation((SensorCalibrationInformation) loadByHexString(arr));
 				break;
 			case REGISTER:
-				message.setRegisterInformation((RegisterInformation) loadByHexString(hexString));
+				message.setRegisterInformation((RegisterInformation) loadByHexString(arr));
 				break;
 			case REAL_TIME:
-				message.setRealTimeInformation((RealTimeInformation) loadByHexString(hexString));
+				message.setRealTimeInformation((RealTimeInformation) loadByHexString(arr));
 				break;
 			case OBSTACLE_INFORMATION:
-				message.setObstacleInformation((ObstacleInformation) loadByHexString(hexString));
+				message.setObstacleInformation((ObstacleInformation) loadByHexString(arr));
 				break;
 			case LIMIT_SET_UP:
-				message.setLimitSetUpInformation((LimitSetUpInformation) loadByHexString(hexString));
+				message.setLimitSetUpInformation((LimitSetUpInformation) loadByHexString(arr));
 				break;
 			case KEEP_ALVIE_FROM_CLIENT:
-				message.setKeepAliveFromClientInformation((KeepAliveFromClientInformation) loadByHexString(hexString));
+				message.setKeepAliveFromClientInformation((KeepAliveFromClientInformation) loadByHexString(arr));
 				break;
 			case BASIC_ATTRIBUTES:
-				message.setBasicAttributesInformation((BasicAttributesInformation) loadByHexString(hexString));
+				message.setBasicAttributesInformation((BasicAttributesInformation) loadByHexString(arr));
 				break;
 			case ALARM_INFORMATION:
-				message.setAlarmInformation((AlarmInformation) loadByHexString(hexString));
+				message.setAlarmInformation((AlarmInformation) loadByHexString(arr));
 				break;
 			case ALARM_SET_UP:
-				message.setAlarmSetUpInformation((AlarmSetUpInformation) loadByHexString(hexString));
+				message.setAlarmSetUpInformation((AlarmSetUpInformation) loadByHexString(arr));
 				break;
 			case KEEP_ALIVE_FROM_SERVER:
 			default:
@@ -56,6 +56,6 @@ public abstract class AbstractLoadObject<T> implements LoadObject<T> {
 		}
 	}
 
-	protected abstract T loadByHexString(String hexStr);
+	protected abstract T loadByHexString(Integer[] arr);
 
 }

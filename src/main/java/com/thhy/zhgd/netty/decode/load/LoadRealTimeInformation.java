@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadRealTimeInformation")
 public class LoadRealTimeInformation extends AbstractLoadObject<RealTimeInformation> {
 	@Override
-	public RealTimeInformation loadByHexString(String hexStr) {
+	public RealTimeInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

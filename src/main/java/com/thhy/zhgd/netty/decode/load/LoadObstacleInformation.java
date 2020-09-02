@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadObstacleInformation")
 public class LoadObstacleInformation extends AbstractLoadObject<ObstacleInformation> {
 	@Override
-	public ObstacleInformation loadByHexString(String hexStr) {
+	public ObstacleInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

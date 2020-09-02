@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadRegisterInformation")
 public class LoadRegisterInformation extends AbstractLoadObject<RegisterInformation> {
 	@Override
-	public RegisterInformation loadByHexString(String hexStr) {
+	public RegisterInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

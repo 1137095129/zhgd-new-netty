@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadWorkCycleInformation")
 public class LoadWorkCycleInformation extends AbstractLoadObject<WorkCycleInformation> {
 	@Override
-	public WorkCycleInformation loadByHexString(String hexStr) {
+	public WorkCycleInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }

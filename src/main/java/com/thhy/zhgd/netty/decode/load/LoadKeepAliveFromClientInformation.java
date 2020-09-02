@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("LoadKeepAliveFromClientInformation")
 public class LoadKeepAliveFromClientInformation extends AbstractLoadObject<KeepAliveFromClientInformation> {
 	@Override
-	public KeepAliveFromClientInformation loadByHexString(String hexStr) {
+	public KeepAliveFromClientInformation loadByHexString(Integer[] arr) {
 		return null;
 	}
 }
