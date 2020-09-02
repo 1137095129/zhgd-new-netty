@@ -1,0 +1,8 @@
+netty-server-config:
+    port: 8699
+    boss-thread-count: 1
+    work-thread-count: 10
+    all-idle-time: 30
+    idle-time-unit: seconds
+    read-idle-time: 30
+    write-idle-time: 30
